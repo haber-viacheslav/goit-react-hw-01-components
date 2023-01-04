@@ -1,13 +1,14 @@
-import { StatItem } from './StatItem';
+import { StatItem } from '../StatItem/StatItem';
 import PropTypes from 'prop-types';
+import { StatData } from './StatList.styled';
 
 export const StatList = ({ stats }) => {
   return (
-    <ul className="stat-list">
+    <StatData className="stat-list">
       {stats.map(stat => (
         <StatItem key={stat.id} stat={stat} />
       ))}
-    </ul>
+    </StatData>
   );
 };
 

@@ -1,12 +1,13 @@
-import { StatList } from './StatList';
+import { StatList } from '../StatList/StatList';
 import PropTypes from 'prop-types';
+import { StatSection, StatTitle } from './Statistics.styled';
 
 export const Statistics = ({ title, stats }) => {
   return (
-    <section className="statistics">
-      <h2 className="title">{title}</h2>
+    <StatSection>
+      <StatTitle>{title}</StatTitle>
       <StatList stats={stats} />
-    </section>
+    </StatSection>
   );
 };
 

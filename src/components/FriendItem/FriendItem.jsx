@@ -1,15 +1,21 @@
 import PropTypes from 'prop-types';
 import { VscCircleLargeFilled } from 'react-icons/vsc';
+import {
+  Friend,
+  FriendStatus,
+  FriendImage,
+  FriendName,
+} from './FriendItem.styled';
 
 export const FriendItem = ({ friend: { avatar, name, isOnline } }) => {
   return (
-    <li className="item">
-      <span className="status">
-        <VscCircleLargeFilled style={isOnline} />
-      </span>
-      <img className="avatar" src={avatar} alt="User avatar" width="48" />
-      <p className="name">{name}</p>
-    </li>
+    <Friend>
+      <FriendStatus status={isOnline}>
+        <VscCircleLargeFilled size="20" />
+      </FriendStatus>
+      <FriendImage src={avatar} alt="User avatar" width="48" />
+      <FriendName>{name}</FriendName>
+    </Friend>
   );
 };
 
